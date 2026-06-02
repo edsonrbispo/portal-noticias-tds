@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\SiteController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get("/", [SiteController::class, "home"]);
+Route::get("/", [HomeController::class, "home"]);
