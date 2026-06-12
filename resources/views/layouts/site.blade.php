@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('titulo', 'Portal Notícias')</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
+        rel="stylesheet">
+
     @vite('resources/css/app.css')
 </head>
 
@@ -16,9 +22,10 @@
             </div>
             <nav>
                 <ul class="flex gap-5 text-slate-800 items-center">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/contato">Contato</a></li>
-                    <li><a href="#" class="inline-block bg-blue-500 text-white px-5 py-1 rounded-md">Login</a>
+                    <li><a href="{{ route('home') }}">Home</a></li>
+                    <li><a href="{{ route('contato') }}">Contato</a></li>
+                    <li><a href="{{ route('login') }}"
+                            class="inline-block bg-blue-500 text-white px-5 py-1 rounded-md">Login</a>
                     </li>
                 </ul>
             </nav>
@@ -39,8 +46,8 @@
                 <div>
                     <h2 class="font-semibold text-white mb-2">Navegar</h2>
                     <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/contato">Contato</a></li>
+                        <li><a href="{{ route('home') }}">Home</a></li>
+                        <li><a href="{{ route('contato') }}">Contato</a></li>
                     </ul>
                 </div>
                 <div>
