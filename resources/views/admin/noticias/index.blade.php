@@ -24,6 +24,18 @@
                                 <th>Ação</th>
                             </tr>
                         </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Título da Notícia</td>
+                                <td>Resumo da Notícia</td>
+                                <td>17/06/2026 19:40</td>
+                                <td>
+                                    <a href="#">Editar</a>
+                                    <a href="#">Excluir</a>
+                                </td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
 
