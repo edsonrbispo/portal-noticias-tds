@@ -5,3 +5,7 @@
 body {
     font-family: "Google Sans", sans-serif;
 }
+
+.bg-cabecalho-tabela {
+    @apply bg-gradient-to-r from-gray-800 to-gray-600 text-white;
+}

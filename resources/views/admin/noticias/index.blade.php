@@ -13,26 +13,28 @@
                     <a href="#" class="bg-black text-white px-3 py-2 rounded">+ Nova Notícia</a>
                 </div>
 
-                <div>
-                    <table>
+                <div class="p-6">
+                    <table class="w-full text-sm">
                         <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Título</th>
-                                <th>Resumo</th>
-                                <th>Publicação</th>
-                                <th>Ação</th>
+                            <tr class="bg-cabecalho-tabela">
+                                <th class="px-5 py-3.5 font-semibold text-left">ID</th>
+                                <th class="px-5 py-3.5 font-semibold text-left">Título</th>
+                                <th class="px-5 py-3.5 font-semibold text-left hidden md:table-cell">Resumo</th>
+                                <th class="px-5 py-3.5 font-semibold text-left hidden md:table-cell">Categoria</th>
+                                <th class="px-5 py-3.5 font-semibold text-left hidden md:table-cell">Publicação</th>
+                                <th class="px-5 py-3.5 font-semibold">Ação</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>Título da Notícia</td>
-                                <td>Resumo da Notícia</td>
-                                <td>17/06/2026 19:40</td>
-                                <td>
-                                    <a href="#">Editar</a>
-                                    <a href="#">Excluir</a>
+                                <td class="px-5 py-3.5">1</td>
+                                <td class="px-5 py-3.5">Título da Notícia</td>
+                                <td class="px-5 py-3.5 hidden md:table-cell">Resumo da Notícia</td>
+                                <td class="px-5 py-3.5 hidden md:table-cell">Tecnologia</td>
+                                <td class="px-5 py-3.5 hidden md:table-cell">17/06/2026 19:40</td>
+                                <td class="px-5 py-3.5 text-center">
+                                    <a href="#" class="bg-gray-300 px-3 py-2 rounded">Editar</a>
+                                    <a href="#" class="bg-red-300 px-3 py-2 rounded ml-2">Excluir</a>
                                 </td>
                             </tr>
                         </tbody>
