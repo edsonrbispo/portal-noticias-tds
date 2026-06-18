@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class NoticiaController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Lista de Notícias
      */
     public function index()
     {
@@ -16,11 +16,11 @@ class NoticiaController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Mostrar Formulário Para Cadastrar Notícia
      */
     public function create()
     {
-        //
+        return view('admin.noticias.cadastrar');
     }
 
     /**
