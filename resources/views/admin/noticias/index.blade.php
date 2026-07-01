@@ -1,3 +1,5 @@
+{{-- @dd($noticias) --}}
+
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
@@ -27,34 +29,41 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="hover:bg-slate-50 transition">
-                                <td class="px-5 py-3.5">1</td>
-                                <td class="px-5 py-3.5">Título da Notícia</td>
-                                <td class="px-5 py-3.5 hidden md:table-cell">Resumo da Notícia</td>
-                                <td class="px-5 py-3.5 hidden md:table-cell">Tecnologia</td>
-                                <td class="px-5 py-3.5 hidden md:table-cell">17/06/2026 19:40</td>
-                                <td class="px-5 py-3.5 text-center">
-                                    <a href="#" class="bg-gray-300 px-3 py-2 rounded">Editar</a>
-                                    <a href="#" class="bg-red-300 px-3 py-2 rounded ml-2">Excluir</a>
-                                </td>
-                            </tr>
-                            <tr class="hover:bg-slate-50 transition">
-                                <td class="px-5 py-3.5">1</td>
-                                <td class="px-5 py-3.5">Título da Notícia</td>
-                                <td class="px-5 py-3.5 hidden md:table-cell">Resumo da Notícia</td>
-                                <td class="px-5 py-3.5 hidden md:table-cell">Tecnologia</td>
-                                <td class="px-5 py-3.5 hidden md:table-cell">17/06/2026 19:40</td>
-                                <td class="px-5 py-3.5 text-center">
-                                    <a href="#" class="bg-gray-300 px-3 py-2 rounded">Editar</a>
-                                    <a href="#" class="bg-red-300 px-3 py-2 rounded ml-2">Excluir</a>
-                                </td>
-                            </tr>
 
-                            <tr>
-                                <td colspan="6" class="text-center text-slate-400 px-5 py-3.5">
-                                    <p>Nenhuma notícia cadastrada</p>
-                                </td>
-                            </tr>
+                            @forelse ($noticias as $n)
+                                <tr class="hover:bg-slate-50 transition">
+                                    <td class="px-5 py-3.5">{{ $n->id }}</td>
+                                    <td class="px-5 py-3.5">{{ $n->titulo }}</td>
+                                    <td class="px-5 py-3.5 hidden md:table-cell">{{ $n->resumo }}</td>
+                                    <td class="px-5 py-3.5 hidden md:table-cell">{{ $n->categoria_id }}</td>
+                                    <td class="px-5 py-3.5 hidden md:table-cell">
+                                        {{ $n->created_at->diffForHumans() }}
+                                        <br>
+                                        {{ $n->created_at->format('d/m/Y H:i') }}
+                                    </td>
+                                    <td class="px-5 py-3.5 text-center flex">
+                                        <a href="#" class="bg-gray-300 px-3 py-2 rounded">Editar</a>
+
+                                        <form action="{{ route('admin.noticias.excluir', $n->id) }}" method="post">
+                                            @method('delete')
+                                            @csrf
+
+                                            <button type="submit" class="bg-red-300 px-3 py-2 rounded ml-2"
+                                                onclick="return confirm('Deseja realmente excluir o registro?')">Excluir</button>
+                                        </form>
+
+
+                                    </td>
+                                </tr>
+                            @empty
+
+                                <tr>
+                                    <td colspan="6" class="text-center text-slate-400 px-5 py-3.5">
+                                        <p>Nenhuma notícia cadastrada</p>
+                                    </td>
+                                </tr>
+                            @endforelse
+
                         </tbody>
                     </table>
                 </div>

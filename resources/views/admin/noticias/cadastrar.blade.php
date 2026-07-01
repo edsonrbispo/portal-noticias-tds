@@ -15,7 +15,11 @@
                 </div>
 
                 <div class="p-6">
-                    //Formulário
+
+                    <form action="#" method="post">
+                        @include('admin.noticias._form')
+                    </form>
+
                 </div>
             </div>
         </div>
