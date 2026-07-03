@@ -42,7 +42,9 @@
                                         {{ $n->created_at->format('d/m/Y H:i') }}
                                     </td>
                                     <td class="px-5 py-3.5 text-center flex">
-                                        <a href="#" class="bg-gray-300 px-3 py-2 rounded">Editar</a>
+
+                                        <a href="{{ route('admin.noticias.editar', $n->id) }}"
+                                            class="bg-gray-300 px-3 py-2 rounded">Editar</a>
 
                                         <form action="{{ route('admin.noticias.excluir', $n->id) }}" method="post">
                                             @method('delete')

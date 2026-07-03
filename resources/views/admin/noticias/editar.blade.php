@@ -16,7 +16,12 @@
 
                 <div class="p-6">
 
-                    <form action="#" method="post">
+                    <form action="{{ route('admin.noticias.atualizar', $noticia->id) }}" method="post"
+                        enctype="multipart/form-data">
+                        {{-- Evitar erro 419 --}}
+                        @csrf
+                        @method('put')
+
                         @include('admin.noticias._form')
                     </form>
 
