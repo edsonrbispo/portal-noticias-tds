@@ -19,7 +19,7 @@ class NoticiaApiController extends Controller
 
     public function store(Request $request) //POST
     {
-        //
+        return response()->json('Cadastrar Notícias...');
     }
 
     public function show(string $id)  //GET
