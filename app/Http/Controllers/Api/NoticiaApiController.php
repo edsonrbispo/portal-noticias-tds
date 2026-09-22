@@ -59,6 +59,8 @@ class NoticiaApiController extends Controller
 
     public function update(Request $request, string $id) //PUT
     {
+
+   
         $request->validate([
             'titulo' => 'required|min:10',
             'resumo' => 'required|min:20',
