@@ -21,8 +21,9 @@
                         <thead>
                             <tr class="bg-cabecalho-tabela">
                                 <th class="px-5 py-3.5 font-semibold text-left">ID</th>
+                                <th class="px-5 py-3.5 font-semibold text-left">Capa</th>
                                 <th class="px-5 py-3.5 font-semibold text-left">Título</th>
-                                <th class="px-5 py-3.5 font-semibold text-left hidden md:table-cell">Resumo</th>
+                        
                                 <th class="px-5 py-3.5 font-semibold text-left hidden md:table-cell">Categoria</th>
                                 <th class="px-5 py-3.5 font-semibold text-left hidden md:table-cell">Publicação</th>
                                 <th class="px-5 py-3.5 font-semibold">Ação</th>
@@ -33,8 +34,8 @@
                             @forelse ($noticias as $n)
                                 <tr class="hover:bg-slate-50 transition">
                                     <td class="px-5 py-3.5">{{ $n->id }}</td>
+                                    <td><img src="{{ asset('storage/' . $n->imagem) }}" class="w-40 rounded object-cover"></td>  
                                     <td class="px-5 py-3.5">{{ $n->titulo }}</td>
-                                    <td class="px-5 py-3.5 hidden md:table-cell">{{ $n->resumo }}</td>
                                     <td class="px-5 py-3.5 hidden md:table-cell">{{ $n->categoria_id }}</td>
                                     <td class="px-5 py-3.5 hidden md:table-cell">
                                         {{ $n->created_at->diffForHumans() }}
