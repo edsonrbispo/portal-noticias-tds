@@ -13,10 +13,22 @@ class NoticiaApiController extends Controller
   
     public function index()  //GET
     {
-        $noticias = Noticia::all();
+        $urlBase = app()->environment('local') 
+                    ? 'http://10.0.2.2:8000/storage' 
+                    : asset('storage');
+
+        $noticias = Noticia::with('categoria')->get()->map(function($noticia) use ($urlBase){
+            $dados = $noticia->toArray();
+            $dados['categoria_nome'] = $noticia->categoria->nome;
+
+            $dados['imagem'] = $urlBase.'/'.$noticia->imagem;
+
+            unset($dados['categoria'], $dados['usuario_id'],  $dados['updated_at']);
+
+            return $dados;
+        });
 
         return response()->json($noticias);
-
     }
 
     public function store(Request $request) //POST
